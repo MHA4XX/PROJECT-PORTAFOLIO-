@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Navigation</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Fashion</div>
+        <ul class="nav-links">
+           
+         
+            
+            <li class="dropdown">
+
+                <a href="#">Categorías ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Ropa</a></li>
+                    <li><a href="#">Accesorios</a></li>
+                    <li><a href="#">Zapatos</a></li>
+                </ul>
+            </li>
+            
+                        <li class="dropdown">
+                <a href="#">Categorías ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Ropa</a></li>
+                    <li><a href="#">Accesorios</a></li>
+                    <li><a href="#">Zapatos</a></li>
+                </ul>
+            </li>
+            
+                        <li class="dropdown">
+                <a href="#">Categorías ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Ropa</a></li>
+                    <li><a href="#">Accesorios</a></li>
+                    <li><a href="#">Zapatos</a></li>
+                </ul>
+            </li>
+        </ul>
+            
+
+        
+    <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+
+
+            <div class="navpc">
+            <a href="#">❤️</a>
+               <div class="navpc1"></div>
+            <a href="#">🛒</a>
+            </div>
+
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
+        
+                  
+        
+    </nav>
+
+ 
+    <div class="tab-container">
+        <div class="tab-buttons">
+            <button class="tab-button active" data-tab="productos">Productos</button>
+            <button class="tab-button" data-tab="servicios">Servicios</button>
+            <button class="tab-button" data-tab="ofertas">Ofertas</button>
+            <button class="tab-button" data-tab="nosotros">Nosotros</button>
+            <button class="tab-button" data-tab="contacto">Contacto</button>
+        </div>
+
+        <div class="tab-content active" id="productos">
+           
+             <h1>Tienda de Productos</h1>
+  <div id="product-list" class="product-grid"></div>
+
+  <!-- Modal de Pago -->
+  <div id="payment-modal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Confirmar Compra</h2>
+      <p id="product-info"></p>
+      <button onclick="confirmPayment()">Pagar Ahora</button>
+      <button onclick="closePaymentModal()">Cancelar</button>
+    </div>
+  </div>
+            <h2>Productos Destacados</h2>
+            <p>Aquí se mostrarán los productos más destacados de tu tienda.</p>
+        </div>
+
+        <div class="tab-content" id="servicios">
+            <h2>Nuestros Servicios</h2>
+            <p>Descripción de los servicios que ofrece tu tienda.</p>
+        </div>
+
+        <div class="tab-content" id="ofertas">
+            <h2>Ofertas Especiales</h2>
+            <p>Aquí encontrarás las mejores ofertas y promociones.</p>
+        </div>
+
+        <div class="tab-content" id="nosotros">
+            <h2>Sobre Nosotros</h2>
+            <p>Información sobre la historia y misión de tu tienda.</p>
+        </div>
+
+        <div class="tab-content" id="contacto">
+            <h2>Contáctanos</h2>
+            <p>Información de contacto y formulario de contacto.</p>
+        </div>
+    </div>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parse/3.4.4/parse.min.js"></script>
+  <script src="main.js"></script>
+    <script src="index.js"></script>
+    <script src="shop.js"></script>
+    
+    
+</body>
+</html>

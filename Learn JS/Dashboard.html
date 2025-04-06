@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard y Tienda con Back4App</title>
+    <script src="https://npmcdn.com/parse/dist/parse.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .container { display: flex; justify-content: space-around; margin-top: 20px; }
+        .dashboard, .store { width: 45%; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        input, button { display: block; width: 100%; margin: 10px 0; padding: 10px; }
+        .product { border: 1px solid #ddd; padding: 10px; margin: 10px; border-radius: 5px; }
+        .product img { max-width: 100px; display: block; margin: auto; }
+    </style>
+</head>
+<body>
+    <h1>Dashboard con Back4App</h1>
+    
+    <div class="container">
+        <!-- Dashboard -->
+        <div class="dashboard">
+            <h2>Agregar Producto</h2>
+            <input type="text" id="nombre" placeholder="Nombre del producto">
+            <input type="number" id="precio" placeholder="Precio">
+            <input type="text" id="imagen" placeholder="URL de imagen">
+            <button onclick="agregarProducto()">Agregar</button>
+        </div>
+
+        <!-- Tienda -->
+        <div class="store">
+            <h2>Tienda</h2>
+            <div id="productos"></div>
+        </div>
+    </div>
+
+    <script>
+        // 1️⃣ Configurar Back4App con tus credenciales
+        
+        Parse.initialize("G3gRNJc47l8pNJ2jbAtH2r9u96yjQRPbSdvad6kh", "beMfvL1rThqs5eI7nqig37M7soKPelVFlvPsr9or");
+        Parse.serverURL = "https://parseapi.back4app.com/";
+
+
+        // 2️⃣ Función para agregar productos a Back4App
+        async function agregarProducto() {
+            let nombre = document.getElementById("nombre").value;
+            let precio = document.getElementById("precio").value;
+            let imagen = document.getElementById("imagen").value;
+
+            if (nombre === "" || precio === "" || imagen === "") {
+                alert("Por favor completa todos los campos.");
+                return;
+            }
+
+            let Producto = Parse.Object.extend("Productos");
+            let producto = new Producto();
+
+            producto.set("nombre", nombre);
+            producto.set("precio", Number(precio));
+            producto.set("imagen", imagen);
+
+            try {
+                await producto.save();
+                alert("Producto agregado exitosamente.");
+                document.getElementById("nombre").value = "";
+                document.getElementById("precio").value = "";
+                document.getElementById("imagen").value = "";
+                mostrarProductos(); // Refrescar la tienda
+            } catch (error) {
+                console.error("Error al guardar:", error);
+            }
+        }
+
+        // 3️⃣ Función para mostrar productos desde Back4App
+        async function mostrarProductos() {
+            let Productos = Parse.Object.extend("Productos");
+            let query = new Parse.Query(Productos);
+
+            try {
+                let resultados = await query.find();
+                let contenedor = document.getElementById("productos");
+                contenedor.innerHTML = "";
+
+                resultados.forEach((producto) => {
+                    let id = producto.id;
+                    let nombre = producto.get("nombre");
+                    let precio = producto.get("precio");
+                    let imagen = producto.get("imagen");
+
+                    let div = document.createElement("div");
+                    div.classList.add("product");
+                    div.innerHTML = `
+                        <img src="${imagen}" alt="${nombre}">
+                        <h3>${nombre}</h3>
+                        <p>Precio: $${precio}</p>
+                        <button onclick="eliminarProducto('${id}')">Eliminar</button>
+                    `;
+                    contenedor.appendChild(div);
+                });
+            } catch (error) {
+                console.error("Error al obtener productos:", error);
+            }
+        }
+
+        // 4️⃣ Función para eliminar productos de Back4App
+        async function eliminarProducto(id) {
+            let Producto = Parse.Object.extend("Productos");
+            let query = new Parse.Query(Producto);
+
+            try {
+                let producto = await query.get(id);
+                await producto.destroy();
+                alert("Producto eliminado.");
+                mostrarProductos(); // Refrescar la tienda
+            } catch (error) {
+                console.error("Error al eliminar:", error);
+            }
+        }
+
+        // Cargar productos al cargar la página
+        document.addEventListener("DOMContentLoaded", mostrarProductos);
+    </script>
+</body>
+</html>

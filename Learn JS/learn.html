@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar & Sidebar</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #f4f4f4; display: flex; min-height: 100vh; }
+
+        /* 🔹 Sidebar para PC */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background: linear-gradient(135deg, #4A00E0, #8E2DE2);
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            position: fixed;
+            left: 0;
+            top: 0;
+            box-shadow: 5px 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.4s ease;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-size: 18px;
+            transition: background 0.3s;
+        }
+
+        .sidebar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* 🔹 Contenido Principal */
+        .content {
+            flex: 1;
+            margin-left: 250px;
+            padding: 20px;
+            transition: margin-left 0.4s ease;
+        }
+
+        /* 🔹 Top Nav para Móvil */
+        .topnav {
+            display: none;
+            width: 100%;
+            background: #8E2DE2;
+            padding: 15px 20px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            left: 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+
+        /* 🔹 Menú Hamburguesa */
+        .menu-btn {
+            display: none;
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 200;
+        }
+
+        .menu-btn span {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background: white;
+            margin: 6px 0;
+            transition: 0.3s;
+        }
+
+        /* 🔹 Mostrar Tabs en PC y TopNav en Móvil */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .content {
+                margin-left: 0;
+            }
+
+            .topnav {
+                display: block;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+        }
+
+        /* 🔹 Mostrar Sidebar cuando se active */
+        .sidebar.show {
+            transform: translateX(0);
+        }
+
+        .menu-btn.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-btn.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🔹 Sidebar (PC) -->
+    <div id="sidebar" class="sidebar">
+        <a href="#">🏠 Inicio</a>
+        <a href="#">📌 Categorías</a>
+        <a href="#">🛍️ Tienda</a>
+        <a href="#">📞 Contacto</a>
+    </div>
+
+    <!-- 🔹 Contenido Principal -->
+    <div class="content">
+        <h1>Bienvenido</h1>
+        <p>Este es un diseño responsive con Sidebar en PC y TopNav en Móvil.</p>
+    </div>
+
+    <!-- 🔹 TopNav (Móvil) -->
+    <div class="topnav">
+        Mi Sitio
+        <button class="menu-btn" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            let sidebar = document.getElementById("sidebar");
+            let btn = document.querySelector(".menu-btn");
+
+            sidebar.classList.toggle("show");
+            btn.classList.toggle("active");
+        }
+    </script>
+
+</body>
+</html>

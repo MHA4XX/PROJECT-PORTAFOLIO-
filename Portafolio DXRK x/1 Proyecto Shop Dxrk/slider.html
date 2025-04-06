@@ -1,0 +1,183 @@
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dxrk Store</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="slider.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "config": "./config.js",
+        "utils": "./utils.js"
+      }
+    }
+  </script>
+  <script src="script.js" type="module"></script>
+
+</head>
+
+<body class="bg-gray-900 text-white font-sans light-theme">
+
+  <!-- Header -->
+  <header class="bg-gray-800 p-4 flex items-center justify-between sticky top-0 z-50 light-theme">
+    <div class="flex items-center">
+       
+       
+    <!-- Botón para abrir el menú -->
+    <button id="openMenu" class="menu-btn">☰</button>
+    
+    <!-- Slider Nav Menu -->
+    <div id="sliderMenu" class="slider-menu">
+       <button id="closeMenu" class="close-btn">&times;</button>
+       
+       <!-- Buscador -->
+       <input type="text" id="searchInput" class="search-bar" placeholder="Buscar colecciones...">
+       
+       <!-- Contenedor de colecciones -->
+       <div class="collections-container">
+          <div class="collection">
+             <img src="https://via.placeholder.com/150" alt="Colección 1">
+             <p>Colección 1</p>
+          </div>
+          <div class="collection">
+             <img src="https://via.placeholder.com/150" alt="Colección 2">
+             <p>Colección 2</p>
+          </div>
+          <div class="collection">
+             <img src="https://via.placeholder.com/150" alt="Colección 3">
+             <p>Colección 3</p>
+          </div>
+          <div class="collection">
+             <img src="https://via.placeholder.com/150" alt="Colección 4">
+             <p>Colección 4</p>
+          </div>
+          <div class="collection">
+             <img src="https://via.placeholder.com/150" alt="Colección 5">
+             <p>Colección 5</p>
+          </div>
+          <div class="collection">
+             <img src="https://via.placeholder.com/150" alt="Colección 6">
+             <p>Colección 6</p>
+          </div>
+       </div>
+    </div>
+           
+           
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+          </path>
+        </svg>
+      </button>
+      <img src="logo.svg" alt="Dxrk Store Logo" class="logo">
+    </div>
+
+    <nav class="hidden lg:flex items-center space-x-6">
+      <a href="#" class="hover:text-gray-300">Inicio</a>
+      <a href="#" class="hover:text-gray-300">Productos</a>
+      <a href="#" class="hover:text-gray-300">Colecciones</a>
+      <a href="#" class="hover:text-gray-300">Contacto</a>
+      <a href="dashboard.html" class="hover:text-gray-300">Dashboard</a>
+    </nav>
+
+    <div class="flex items-center">
+      <input type="text" placeholder="Buscar"
+        class="bg-gray-700 text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+      <button class="ml-4 text-white hover:text-gray-300 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M21 21l-6-6m2-6a7 7 0 10-14 0 7 7 0 0014 0z"></path>
+        </svg>
+      </button>
+      <!-- Theme Switch Button -->
+      <button id="theme-switch" class="ml-4 text-white hover:text-gray-300 focus:outline-none light-theme">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25c0 5.385 4.365 9.75 9.75 9.75a9.753 9.753 0 009.002-5.998z" />
+          </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Sidebar Menu (Hidden by default) -->
+  <div id="sidebar"
+    class="fixed top-0 left-0 w-64 h-full bg-gray-800 text-white z-50 transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden light-theme">
+    <div class="p-4">
+      <img src="logo.svg" alt="Dxrk Store Logo" class="h-8 mb-4">
+      <nav class="flex flex-col space-y-4">
+        <a href="#" class="hover:text-gray-300">Inicio</a>
+        <a href="#" class="hover:text-gray-300">Productos</a>
+        <a href="#" class="hover:text-gray-300">Colecciones</a>
+        <a href="#" class="hover:text-gray-300">Contacto</a>
+        <a href="dashboard.html" class="hover:text-gray-300">Dashboard</a>
+      </nav>
+    </div>
+  </div>
+
+
+
+
+
+
+    <!-- Product Tabs -->
+    <section class="mb-8">
+      <div class="flex border-b border-gray-700">
+        <button class="tab-button inline-block py-2 px-4 hover:text-gray-300 focus:outline-none active light-theme"
+          data-tab="featured">Destacados</button>
+        <button class="tab-button inline-block py-2 px-4 hover:text-gray-300 focus:outline-none light-theme"
+          data-tab="new">Nuevos</button>
+        <button class="tab-button inline-block py-2 px-4 hover:text-gray-300 focus:outline-none light-theme"
+          data-tab="sale">En Oferta</button>
+      </div>
+
+      <div id="featured" class="tab-content grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-10 light-theme">
+        <!-- Featured Products -->
+      </div>
+
+      <div id="new" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 light-theme">
+        <!-- New Products -->
+      </div>
+
+      <div id="sale" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 light-theme">
+        <!-- Sale Products -->
+      </div>
+    </section>
+    <!-- Product Filtering -->
+    <section id="product-filters" class="mb-8">
+      <label for="product-filter">Filtrar por:</label>
+      <select id="product-filter" class="bg-gray-700 text-white px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+        <option value="all">Todos los Productos</option>
+        <option value="clothing">Ropa</option>
+        <option value="shoes">Zapatos</option>
+        <option value="accessories">Accesorios</option>
+        <option value="makeup">Maquillaje</option>
+        <option value="cellphones">Celulares</option>
+        <!-- Add more options as needed -->
+      </select>
+    </section>
+
+    <!-- Product Listing -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Todos los Productos</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Product Items -->
+      </div>
+      <button id="load-more" class="block w-full bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-md">Cargar
+        Más</button>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 p-4 text-center light-theme">
+    <p>&copy; 2024 Dxrk Store. Todos los derechos reservados.</p>
+  </footer>
+
+
+ <<script src="slider.js"></script>
+</body>
+
+</html>

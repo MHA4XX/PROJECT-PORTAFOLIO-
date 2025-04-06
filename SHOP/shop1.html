@@ -1,0 +1,312 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroShop - Modern Electronics Store</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="light-theme">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>ElectroShop</h1>
+            </div>
+            <div class="hamburger-menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Deals</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="#" id="theme-toggle"><i class="fas fa-moon"></i></a>
+                <a href="#" id="favorites-icon"><i class="fas fa-heart"></i> <span>0</span></a>
+                <a href="#" class="cart-icon" id="cart-icon"><i class="fas fa-shopping-cart"></i> <span>0</span></a>
+                <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-user"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Premium Sound Experience</h2>
+                <h1>Beats Solo Wireless</h1>
+                <p>Immerse yourself in premium sound quality with the latest Beats Solo Wireless headphones.</p>
+                <a href="#" class="btn">Shop Now</a>
+            </div>
+            <div class="hero-image">
+                <img src="/54e3c0564bd1b64c82c5a482d6895d4c.jpg" alt="Beats Headphones">
+            </div>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="category-grid">
+                <div class="category-card" style="background-color: #FFD166;">
+                    <div class="category-icon"><i class="fas fa-headphones"></i></div>
+                    <h3>Headphones</h3>
+                    <a href="#" class="category-link">Shop Now</a>
+                </div>
+                <div class="category-card" style="background-color: #06D6A0;">
+                    <div class="category-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Smartphones</h3>
+                    <a href="#" class="category-link">Shop Now</a>
+                </div>
+                <div class="category-card" style="background-color: #118AB2;">
+                    <div class="category-icon"><i class="fas fa-laptop"></i></div>
+                    <h3>Laptops</h3>
+                    <a href="#" class="category-link">Shop Now</a>
+                </div>
+                <div class="category-card" style="background-color: #EF476F;">
+                    <div class="category-icon"><i class="fas fa-gamepad"></i></div>
+                    <h3>Gaming</h3>
+                    <a href="#" class="category-link">Shop Now</a>
+                </div>
+                <div class="category-card" style="background-color: #073B4C;">
+                    <div class="category-icon"><i class="fas fa-tv"></i></div>
+                    <h3>Smart TVs</h3>
+                    <a href="#" class="category-link">Shop Now</a>
+                </div>
+                <div class="category-card" style="background-color: #9D4EDD;">
+                    <div class="category-icon"><i class="fas fa-clock"></i></div>
+                    <h3>Smartwatches</h3>
+                    <a href="#" class="category-link">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <svg viewBox="0 0 200 200" width="100%" height="180">
+                            <rect x="40" y="40" width="120" height="80" rx="5" fill="#333" />
+                            <rect x="50" y="50" width="100" height="60" rx="2" fill="#666" />
+                            <circle cx="100" cy="140" r="15" fill="#333" />
+                        </svg>
+                    </div>
+                    <div class="product-info">
+                        <h3>MacBook Pro 16"</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(245)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">$1,999</span>
+                            <span class="original-price">$2,399</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge sale">Sale</div>
+                    <div class="product-image">
+                        <svg viewBox="0 0 200 200" width="100%" height="180">
+                            <circle cx="100" cy="90" r="50" fill="#333" />
+                            <circle cx="100" cy="90" r="40" fill="#555" />
+                            <rect x="80" y="140" width="40" height="15" rx="5" fill="#333" />
+                        </svg>
+                    </div>
+                    <div class="product-info">
+                        <h3>Beats Studio Buds</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(187)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">$149</span>
+                            <span class="original-price">$199</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <svg viewBox="0 0 200 200" width="100%" height="180">
+                            <rect x="50" y="60" width="100" height="80" rx="10" fill="#333" />
+                            <rect x="60" y="70" width="80" height="60" rx="5" fill="#555" />
+                            <circle cx="100" cy="100" r="10" fill="#888" />
+                        </svg>
+                    </div>
+                    <div class="product-info">
+                        <h3>Apple Watch Series 8</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>(126)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">$399</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-badge">Featured</div>
+                    <div class="product-image">
+                        <svg viewBox="0 0 200 200" width="100%" height="180">
+                            <rect x="70" y="30" width="60" height="140" rx="5" fill="#333" />
+                            <rect x="75" y="35" width="50" height="120" rx="3" fill="#666" />
+                            <circle cx="100" cy="165" r="5" fill="#888" />
+                        </svg>
+                    </div>
+                    <div class="product-info">
+                        <h3>iPhone 14 Pro Max</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(352)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="price">$1,099</span>
+                            <span class="original-price">$1,199</span>
+                        </div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get the latest updates on new products and upcoming sales</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your Email Address" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>ElectroShop</h3>
+                    <p>Your one-stop destination for all premium electronics and accessories.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Shop</h4>
+                    <ul>
+                        <li><a href="#">Headphones</a></li>
+                        <li><a href="#">Smartphones</a></li>
+                        <li><a href="#">Laptops</a></li>
+                        <li><a href="#">Gaming</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, Digital City</p>
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9ef7f0f8f1defbf2fbfdeaecf1edf6f1eeb0fdf1f3">[email&#160;protected]</a></p>
+                    </address>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 ElectroShop. All Rights Reserved.</p>
+                <div class="payment-icons">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Detail Modal -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="product-detail-content">
+                <!-- Product details will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Your Shopping Cart</h2>
+            <div id="cart-items">
+                <!-- Cart items will be dynamically inserted here -->
+            </div>
+            <div class="cart-total">
+                <p>Total: <span id="cart-total-price">$0.00</span></p>
+                <button class="btn checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Favorites Modal -->
+    <div id="favorites-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Your Favorites</h2>
+            <div id="favorites-items">
+                <!-- Favorites will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="module" src="script.js"></script>
+    
+    <script src="script1.js"></script>
+    
+    
+</body>
+</html>
